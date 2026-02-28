@@ -45,8 +45,23 @@ let getAllUser = () => {
     })
 }
 
+let getUserInfoById = (userId) => {
+    return new Promise(async (resolve, reject) => {
+        try{
+            let user = await db.User.findOne({
+                where: {id: userId},
+                raw: true,
+            });
+            resolve(user);
+        }catch(e) {
+            reject(e);
+        }
+    })
+}
+
 module.exports = {
     createNewUser: createNewUser,
     hashUserPassword: hashUserPassword,
     getAllUser: getAllUser,
+    getUserInfoById: getUserInfoById,
 }
