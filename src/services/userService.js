@@ -23,17 +23,17 @@ let handleUserLogin = (email, password) => {
                         userData.user = user;
                     } else{
                         userData.errCode = 2;
-                        userData.errMessage = "Your password isn't correct. Please try again!"
+                        userData.Message = "Your password isn't correct. Please try again!"
                     }
                 } else{
                     userData.errCode = 2;
-                    userData.errMessage = "Your password isn't correct. Please try again!"
+                    userData.Message = "Your password isn't correct. Please try again!"
                 }
             
             } else{
                 //return error
                 userData.errCode = 1;
-                userData.errMessage = "Your email isn't exist in our system. Please try other email!"
+                userData.Message = "Your email isn't exist in our system. Please try other email!"
                 
             }
             resolve(userData)
