@@ -179,7 +179,7 @@ let updateUserData = (data) => {
         await user.save();
 
         resolve({
-          errcode: 0,
+          errCode: 0,
           message: "Update the user succeed!",
         });
       } else {
